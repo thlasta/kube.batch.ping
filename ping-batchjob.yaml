@@ -1,0 +1,18 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: ping-job
+spec:
+  schedule: "*/5 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: ping-container
+              image: alpine:latest
+              command:
+                - sh
+                - -c
+                - "ping -c 1 hlasta-pi-146"
+          restartPolicy: OnFailure
