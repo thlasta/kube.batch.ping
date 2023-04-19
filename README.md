@@ -6,3 +6,7 @@ git branch -M main
 git remote add origin git@github.com:thlasta/kube.batch.ping.git
 git push -u origin main
 
+git pull git@github.com:thlasta/kube.batch.ping.git
+
+# Namespace "batch" anlegen
+kubectl create namespace batch

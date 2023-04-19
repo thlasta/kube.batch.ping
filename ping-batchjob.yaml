@@ -2,6 +2,7 @@ apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
   name: ping-job
+  namespace: batch
 spec:
   schedule: "*/5 * * * *"
   jobTemplate:
